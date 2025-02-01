@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Рождения!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+        .birthday-text {
+            font-size: 3em;
+            color: #d40078;
+            margin-top: 20px;
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #d40078, 0 0 20px #d40078; }
+            100% { text-shadow: 0 0 20px #d40078, 0 0 40px #d40078; }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6f61;
+            border-radius: 50%;
+            animation: confetti 3s infinite;
+        }
+        .balloon {
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            background-color: #ff6f61;
+            border-radius: 50%;
+            bottom: -100px;
+            animation: float 6s infinite ease-in;
+            z-index: 1;
+        }
+        .balloon::after {
+            content: '';
+            width: 2px;
+            height: 100px;
+            background-color: #fff;
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .balloon:nth-child(2n) {
+            background-color: #6b5b95;
+            animation-duration: 8s;
+        }
+        .balloon:nth-child(3n) {
+            background-color: #88b04b;
+            animation-duration: 7s;
+        }
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        @keyframes float {
+            0% { bottom: -100px; transform: translateX(0) rotate(0deg); }
+            50% { transform: translateX(50px) rotate(10deg); }
+            100% { bottom: 100vh; transform: translateX(-50px) rotate(-10deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="birthday-text">С Днём Рождения!</div>
+    </div>
+
+    <!-- Конфетти -->
+    <div class="confetti" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="confetti" style="left: 20%; animation-delay: 1s;"></div>
+    <div class="confetti" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="confetti" style="left: 40%; animation-delay: 0.5s;"></div>
+    <div class="confetti" style="left: 50%; animation-delay: 1.5s;"></div>
+    <div class="confetti" style="left: 60%; animation-delay: 2.5s;"></div>
+    <div class="confetti" style="left: 70%; animation-delay: 0.8s;"></div>
+    <div class="confetti" style="left: 80%; animation-delay: 1.8s;"></div>
+    <div class="confetti" style="left: 90%; animation-delay: 2.8s;"></div>
+
+    <!-- Шарики -->
+    <div class="balloon" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="balloon" style="left: 20%; animation-delay: 2s;"></div>
+    <div class="balloon" style="left: 30%; animation-delay: 4s;"></div>
+    <div class="balloon" style="left: 40%; animation-delay: 1s;"></div>
+    <div class="balloon" style="left: 50%; animation-delay: 3s;"></div>
+    <div class="balloon" style="left: 60%; animation-delay: 5s;"></div>
+    <div class="balloon" style="left: 70%; animation-delay: 2s;"></div>
+    <div class="balloon" style="left: 80%; animation-delay: 4s;"></div>
+    <div class="balloon" style="left: 90%; animation-delay: 1s;"></div>
+</body>
+</html>
